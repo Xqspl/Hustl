@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="login.css">
+  <style>
+    /* Additional styling for the images */
+    .laptop-image {
+      width: 250px;
+      height: 250px;
+      position: absolute;
+      top: 50%;
+      /* Adjusted to center vertically */
+      transform: translateY(-50%);
+      z-index: 2;
+      /* Set to a higher z-index to appear on top */
+    }
+
+    .laptop-image:first-child {
+      left: 10%;
+      /* Adjusted position for the first image */
+    }
+
+    .laptop-image:last-child {
+      right: 10%;
+      /* Adjusted position for the second image */
+    }
+
+    .black-box {
+      position: relative;
+      /* Adjusted position to accommodate the images */
+    }
+
+    /* Additional styling for the form */
+    .container {
+      position: relative;
+      z-index: 1;
+      /* Ensure the form is above the images */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="outer-box">
+    <!-- Laptop 1 -->
+    <img class="laptop-image" src="img/work.png" alt="Laptop 1">
+
+    <div class="grey-box"></div>
+    <div class="additional-box"></div>
+
+
+
+    <div class="black-box">
+      <div class="container">
+
+        <h2>Login</h2>
+
+        <!-- Login Form -->
+        <form action="dashboard.html" method="post">
+
+          <!-- Sign Up Invitation -->
+          <p>Don't have an account yet? <a href="signup.html">Sign Up</a></p>
+
+          <!-- Email Address -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <!-- Password -->
+          <label for="password">Password:</label>
+          <div class="password-container">
+            <input type="password" id="password" name="password" required>
+            <p class="forgot-password"><a href="dashboard.html">Forgot your password?</a></p>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div class="remember-container">
+            <input type="checkbox" id="remember" name="remember">
+            <label class="remember-label" for="remember">Remember me</label>
+          </div>
+
+          <!-- Submit Button -->
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+    <!-- Laptop 2 -->
+    <img class="laptop-image" src="img/working.png" alt="Laptop 2">
+  </div>
+
+</body>
+
+</html>

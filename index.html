@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Background Color and Outline</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap">
+  <style>
+    .rectangle-behind {
+      position: absolute;
+      background-color: #BBBCBC;
+      width: 87.5%;
+      height: calc(100vh - 40px);
+      z-index: -2;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      border-radius: 30px;
+    }
+    body {
+      font-family: 'Inknut Antiqua', serif;
+      background-color: #7CC6F2;
+      border: 2px solid black;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      padding: 10px;
+      position: absolute;
+      top: 5px;
+      width: 87.5%;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #BBBCBC;
+      text-shadow: 4px 4px 6px black;
+      margin-top: 10px;
+      margin-left: 15px;
+    }
+
+    nav {
+      margin-right: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav li {
+      margin-right: 15px;
+      font-size: 18px;
+      color: #BBBCBC;
+      position: relative;
+    }
+
+    nav li a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #BBBCBC;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #555;
+    }
+
+    nav li.signup a {
+      color: black;
+    }
+
+    .main-content {
+      text-align: left;
+      margin-top: 30px;
+      padding: 20px;
+      color: #333;
+    }
+
+    .main-content p {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      color: #BBBCBC;
+      text-decoration: underline #7CC6F2;
+    }
+
+    .main-content small {
+      font-size: 14px;
+      color: #BBBCBC;
+      line-height: 1%;
+    }
+
+    .download-link {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .download-link a {
+      color: #7CC6F2;
+      text-decoration: underline #7CC6F2;
+      font-size: 24px;
+    }
+
+    .testimonial {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      color: #BBBCBC;
+    }
+
+    .testimonial .testimonial-quote {
+      font-size: 24px;
+      color: #BBBCBC;
+      text-decoration: none;
+    }
+
+    .testimonial .recommended-by {
+      font-size: 14px;
+      color: #BBBCBC;
+      text-decoration: none;
+    }
+
+    .additional-recommendations {
+      font-size: 14px;
+      color: #BBBCBC;
+      text-decoration: none;
+    }
+
+    .image-section {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .image-section img {
+      width: 90px;
+      height: 120px;
+      margin-right: 10px;
+    }
+
+    .tyme-image {
+      width: 40%;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      margin-top: 10%;
+        margin-right: 5%;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 0px;
+      /* box-shadow: 0px 0px 10px #7CC6F2; */
+    }
+
+    .button-container button {
+      font-family: 'Inknut Antiqua', serif;
+      padding: 10px 20px;
+      background-color: #CDCDCD;
+      color: black;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      /* box-shadow: 5 5 10px 10px #000;    */
+    }
+
+    .button-container button:hover {
+      background-color: #999;
+    }
+
+    .black-bar {
+      background-color: black;
+      width: 66.67%;
+      height: 3px;
+      margin: 0 auto;
+      margin-top: 1%;
+    }
+
+    .rectangle {
+  position: absolute;
+  background-color: #272425;
+  width: 87.5%;
+  height: 655px;
+  z-index: -1;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px; /* Adjust the value to control the curvature */
+}
+    .button-container {
+        border-radius: 0px; /* Adjust the border-radius for more circular corners */
+        /* You can add more styles as needed */
+        /* padding: 10px; */
+        /* background-color: #ffffff; */
+      }
+
+
+    /* New styles for center-aligning the button image */
+    .funny-button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .funny-button-container img {
+  border-radius: 45px; /* Adjust the value to control the curvature of the corners */
+  /* Add any additional styling for the image if necessary */
+    }
+
+    /* New styles for scaling the whole.png image */
+    .whole-image-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .whole-image-container img {
+      width: 100%; /* Make the image fill the container width */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 45px;
+    }
+    .signup {
+    background-color: #b0b0b0; /* Light grey background color */
+    /* You can add more styles as needed */
+    /* padding: 5px; */
+    border-radius: 5px; 
+      }
+  </style>
+</head>
+
+<body>
+  <div class="rectangle-behind">
+    <!-- Content for the new rectangle -->
+  </div>
+    <div class="rectangle">
+    <header>
+      <h1>Hustl</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="dashboard.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li class="signup"><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <p>Time Management can be <br>Difficult, we make it easy.</p>
+      <small>We help students like you build the good habits that <br> make successful careers.</small>
+
+      <!-- Updated image size and positioning -->
+      <img src="img/tyme.png" alt="Placeholder Image" width="17px" height="26px" class="tyme-image">
+
+      <div class="download-link">
+        <a href="signup.html">Download for Free</a>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-quote">"The best time management app on the market" <br> - Mrs. Lobell</div>
+        <div class="recommended-by">Recommended by:</div>
+
+      </div>
+
+      <div class="image-section">
+        <img src="img/Joyce.jpg" width="90" height="120">
+        <img src="img/Lobell.jpg" width="90" height="120">
+        <img src="img/Johnson.jpg" width="90" height="120">
+        <div class="additional-recommendations">-and many others</div>
+      </div>
+
+      <!-- Center-aligned funny button image -->
+      <div class="funny-button-container">
+        <h1>Log In</h1>
+           <a href="login.html">
+          <img src="img/Button(fUNNY).png">
+
+          </a>
+      </div>
+      <!-- <br>
+      <br> -->
+      <div class="button-container">
+        <button>Free Trial</button>
+        <button>One Month</button>
+        <button>Three Months</button>
+        <button>1 Year</button>
+      </div>
+      <!-- <br> -->
+      <div class="black-bar"></div>
+      <br>
+      <!-- Container for the scaled whole.png image -->
+      <div class="whole-image-container">
+        <img src="img/whole.png">
+      </div>
+
+      <div style="text-align: right; margin-top: 10px; padding-right: 20px;">
+        <small style="font-size: 12px; color: #003087;">★</small>
+        <small style="font-size: 12px; color: #555;">
+          Members information <br> may or may not be sold <br> abroad.
+        </small>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

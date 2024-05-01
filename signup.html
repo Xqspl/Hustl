@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Background Color and Outline</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inknut Antiqua', serif;
+            background-color: #7CC6F2;
+            border: 2px solid black;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* New styles for the checkbox container */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            /* Align items vertically */
+            margin-top: 10px;
+            /* Adjust as needed */
+        }
+
+        .checkbox-input {
+            margin-right: 5px;
+            /* Adjust as needed */
+        }
+
+        .checkbox-label {
+            color: #BBBCBC;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Styles for the dark gray box */
+        .dark-grey-box {
+            position: absolute;
+            background-color: #272425;
+            /* Very dark grey color */
+            width: 50%;
+            height: 885px;
+            z-index: 0;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            text-align: left;
+            /* Align text to the left */
+            padding-top: 20px;
+            /* Adjust padding as needed */
+            padding-left: 20px;
+            /* Adjust padding-left to move text to the left */
+        }
+
+        .rectangle-behind {
+            position: absolute;
+            background-color: #BBBCBC;
+            width: 87.5%;
+            height: calc(100vh - 40px);
+            z-index: -2;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 30px;
+        }
+
+        .rectangle {
+            position: absolute;
+            background-color: #1B1A1A;
+            width: 87.5%;
+            height: 905px;
+            z-index: -1;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 30px;
+            /* Adjust the value to control the curvature */
+        }
+
+        /* Styles for the signup container */
+        .signup-container {
+            position: absolute;
+            bottom: 220px;
+            /* Adjust the bottom spacing as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: left;
+            /* Center-align the content */
+        }
+
+        .signup img {
+            width: 100px;
+            /* Adjust the width as needed */
+            height: 100px;
+            /* Adjust the height as needed */
+            border-radius: 30px;
+            /* Make the image circular */
+            clip-path: polygon(15% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%, 0% 15%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            padding: 10px;
+            position: absolute;
+            top: 5px;
+            width: 87.5%;
+            z-index: 1;
+        }
+
+        /* Styles for the h1 tag */
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #BBBCBC;
+            text-shadow: 4px 4px 6px black;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+
+        p {
+            color: #BBBCBC;
+            margin-top: -10px;
+        }
+
+        /* Add this to your existing styles */
+        /* Add this to your existing styles */
+        .PASS {
+            color: #D8D8D8;
+            font-size: 24px;
+            margin-top: 20px;
+          margin-bottom: 1px;
+        }
+
+        .password-container {
+            display: flex;
+            justify-content: space-between;
+            /* Adjust as needed */
+            margin-top: 10px;
+        }
+
+        .password-input,
+        .confirm-password-input {
+            flex: 0 0 38%;
+            /* Adjust the width as needed */
+        }
+
+        .or-image {
+            display: block;
+            margin: auto;
+            /* Center the image */
+            margin-top: 10px;
+            /* Adjust as needed */
+            margin-bottom: 10px;
+            /* 10px margin from the bottom of the page */
+        }
+
+        .password-container label {
+            color: #BBBCBC;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .password-container input {
+            text-align: center;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        /* New styles for center-aligning the button image */
+        .funny-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .funny-button-container img {
+            border-radius: 45px;
+            /* Adjust the value to control the curvature of the corners */
+            /* Add any additional styling for the image if necessary */
+        }
+
+        /* Styles for all input boxes */
+        input {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 3px solid #121212;
+            border-radius: 20px;
+            background-color: #272425;
+            color: #BBBCBC;
+        }
+
+        button {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 3px solid #121212;
+            border-radius: 20px;
+            background-color: #272425;
+            color: #BBBCBC;
+        }
+
+        input {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 3px solid #121212;
+            border-radius: 20px;
+            background-color: #272425;
+            color: #BBBCBC;
+        }
+
+        /* Styles for the welcome text */
+        .welcome-text {
+            font-size: 18px;
+            color: #BBBCBC;
+            text-align: left;
+            /* Make the text left-aligned */
+            margin-top: 260px;
+            margin-left: 35px;
+            /* Adjust the left margin as needed */
+        }
+
+        /* Styles for the "Sign Up" text */
+        .signup-text {
+            color: #D8D8D8;
+            font-size: 24px;
+            /* Adjust the font size as needed */
+            margin: 0;
+            padding-top: 0;
+            /* Remove the top padding */
+            padding-left: 0;
+            /* Remove the left padding */
+
+            /* Style for center-aligning the login section */
+            section {
+                text-align: center;
+                position: relative;
+                top: -10px;
+                /* Adjust this value based on your design */
+            }
+
+            /* Additional styling for other boxes or rectangles */
+            label {
+                text-align: center;
+                position: relative;
+                top: -30px;
+            }
+
+            input {
+                text-align: center;
+                position: relative;
+                top: -30px;
+            }
+
+            .Fname-container {
+                text-align: center;
+            }
+
+            /* last name box */
+            .Lname-container {
+                text-align: center;
+            }
+
+            .Lname-container-label {
+                text-align: center;
+                position: relative;
+                top: -60px;
+            }
+
+            input {
+                text-align: center;
+                position: relative;
+                top: -60px;
+            }
+        }
+
+        /* TEXTBOXES FOR First Name and Last Name next to each other */
+        .name-container {
+            display: flex;
+        }
+
+        .name-input {
+            flex: 1;
+            /* Use flex to distribute space evenly between input boxes */
+            margin-right: 2%;
+            /* Adjust the margin between input boxes as needed */
+        }
+
+        .user-input {
+            width: calc(50% - 1%);
+            /* Adjust the width as needed */
+            margin-right: 2%;
+            /* Adjust the margin between input boxes as needed */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 3px solid #121212;
+            border-radius: 20px;
+            background-color: #272425;
+            color: #BBBCBC;
+        }
+
+        .user-container {
+            display: flex;
+        }
+
+        .user-input {
+            flex: 1;
+            /* Use flex to distribute space evenly between input boxes */
+            margin-right: 2%;
+            /* Adjust the margin between input boxes as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rectangle">
+        <header>
+            <h1>Hustl</h1>
+        </header>
+        <!-- Welcome text under "Hustl" -->
+        <p class="welcome-text">Welcome to <br> Hustl</p>
+
+        <!-- New container for the woman.png image -->
+        <div class="woman-image-container">
+            <img src="img/woman.png" alt="Woman Image" style="width: 313px; height: 266px; float: right;"">
+      </div>
+    </div>
+  
+    <div class=" rectangle-behind">
+            <!-- Content for the new rectangle -->
+        </div>
+
+        <!-- Center-aligned "Sign Up" image with curved corners -->
+        <div class="signup-container">
+            <img src="img/signup.png" alt="Sign Up Image">
+        </div>
+
+        <!-- Dark gray box with "Login" text -->
+        <div class="dark-grey-box">
+            <h1 class="signup-text">Sign Up</h1>
+            <!-- SignUp Section -->
+            <section>
+                <p>Have an account already? <a href="login.html">Login</a></p>
+            </section>
+
+            <!-- TEXTBOXES FOR First Name and Last Name next to each other -->
+            <div class="name-container">
+                <input placeholder="First Name" class="name-input">
+                <input placeholder="Last Name" class="name-input">
+            </div>
+            <br>
+            <!-- Username and Country next to each other -->
+            <div class="user-container">
+                <input placeholder="Username" class="user-input">
+                <input placeholder="Country" class="user-input">
+            </div>
+
+            <div class="PASS">
+                <div class="password-container">
+                    <div class="password-input">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Enter Password">
+                    </div>
+
+                    <div class="confirm-password-input">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <!-- Checkbox for terms and conditions -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="termsCheckbox" class="checkbox-input">
+                <label for="termsCheckbox" class="checkbox-label">I agree to the privacy policy</label>
+            </div>
+
+            <br>
+            <!-- "or.png" image -->
+            <img src="img/or.png" class="or-image" width="750">
+
+            <div class="PASS">
+                <div class="password-container">
+                    <div class="password-input">
+                        <button><img src="img/google.png" height="32px" width="32px">Sign up with Google</button>
+                    </div>
+
+                    <div class="confirm-password-input">
+                        <button> <img src="img/soft.png" height="32px" width="32px">Sign up with Microsoft</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center-aligned funny button image -->
+            <div class="funny-button-container">
+                <img src="img/signup.png">
+            </div>
+        </div>
+
+
+</body>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{
+    "today": [
+      {
+        "id": 1,
+        "task": "Complete math homework"
+      },
+      {
+        "id": 2,
+        "task": "Study for history test"
+      },
+      {
+        "id": 3,
+        "task": "Write English Essay"
+      },
+      {
+        "id": 4,
+        "task": "Read and Annotate pgs.42-96"
+      },
+      {
+        "id": 5,
+        "task": "Game Vs. Xavarian"
+      },
+      {
+        "id": 6,
+        "task": "Pick Sister up from school"
+      }
+    ],
+    "upcoming": [
+      {
+        "id": 7,
+        "task": "Write English essay"
+      },
+      {
+        "id": 8,
+        "task": "Practice for soccer match"
+      },
+      {
+        "id": 9,
+        "task": "Study for quarter math final"
+      },
+      {
+        "id": 10,
+        "task": "Game vs Horace Mann Away"
+      },
+      {
+        "id": 11,
+        "task": "Joe Bobs Birthday party"
+      }
+    ]
+   }
+   
